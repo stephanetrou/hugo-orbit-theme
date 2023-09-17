@@ -416,7 +416,7 @@ p {
   flex-direction: row;
 }
 .wrapper .sidebar-wrapper {
-  min-width: 255px;
+  min-width: 270px;
   position: relative;
   height: 100%;
 }

@@ -8,15 +8,15 @@
     <meta name="keywords" content="{{ delimit .Site.Params.keywords ", " }}">
 {{ end }}
 
-<link rel="apple-touch-icon" sizes="180x180" href=" {{ "/apple-touch-icon.png" | absURL}}">
-<link rel="icon" type="image/png" sizes="32x32" href=" {{ "/favicon-32x32.png" | absURL}}">
-<link rel="icon" type="image/png" sizes="16x16" href=" {{ "/favicon-16x16.png" | absURL}}">
-<link rel="manifest" href=" {{ "/site.webmanifest" | absURL}}">
+<link rel="apple-touch-icon" sizes="180x180" href=" {{ .Site.BaseURL }}{{ "/apple-touch-icon.png" }}">
+<link rel="icon" type="image/png" sizes="32x32" href=" {{ .Site.BaseURL }}{{ "/favicon-32x32.png" }}">
+<link rel="icon" type="image/png" sizes="16x16" href=" {{ .Site.BaseURL }}{{ "/favicon-16x16.png" }}">
+<link rel="manifest" href=" {{ .Site.BaseURL }}{{ "/site.webmanifest" }}">
 
-<link rel="stylesheet" href="{{ "/assets/plugins/bootstrap/css/bootstrap.css" | absURL }}">
-<link rel="stylesheet" href="{{ "/assets/plugins/font-awesome/css/font-awesome.css" | absURL }}">
+<link rel="stylesheet" href="{{ .Site.BaseURL }}{{ "/assets/plugins/bootstrap/css/bootstrap.css" }}">
+<link rel="stylesheet" href="{{ .Site.BaseURL }}{{ "/assets/plugins/font-awesome/css/font-awesome.css" }}">
 
 {{ $stylesPath := printf "/assets/css/%s" .Site.Params.styles }}
-<link id="theme-style" rel="stylesheet" href="{{ $stylesPath | absURL }}">
+<link id="theme-style" rel="stylesheet" href="{{ .Site.BaseURL }}{{ $stylesPath }}">
 
 {{ template "_internal/google_analytics_async.html" . }}
