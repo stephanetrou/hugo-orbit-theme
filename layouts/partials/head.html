@@ -18,5 +18,3 @@
 
 {{ $stylesPath := printf "/assets/css/%s" .Site.Params.styles }}
 <link id="theme-style" rel="stylesheet" href="{{ .Site.BaseURL }}{{ $stylesPath }}">
-
-{{ template "_internal/google_analytics_async.html" . }}
