@@ -1,14 +1,23 @@
-            <section class="skills-section section">
-                <h2 class="section-title"><i class="fa {{ .Site.Params.skills.icon }}"></i>{{ .Site.Params.skills.title }}</h2>
-                <div class="skillset">
+            <div class="language-container container-block">
+                <h2 class="container-block-title">{{ .Site.Params.skills.title }}</h2>
+                <ul class="list-unstyled interests-list">
 				{{ range .Site.Params.skills.list }}
-                    <div class="item">
-                        <h3 class="level-title">{{ .skill }}</h3>
-                        <div class="level-bar">
-                            <div class="level-bar-inner" data-level="{{ .level }}">
-                            </div>
-                        </div><!--//level-bar-->
-                    </div><!--//item-->
-                {{ end }}
-                </div>
-            </section><!--//skills-section-->
+                    <li>{{ .language }} : <span class="lang-desc">
+                        {{ $full_stars := math.Floor .stars }}
+                        {{ $empty_stars := math.Sub 5 (math.Ceil .stars) }}
+                        {{ $star_half := math.Sub (math.Ceil .stars) (math.Floor .stars) }}
+
+                        {{ range seq $full_stars }}
+                        <i class="fa fa-star"></i>
+                        {{ end }}
+                        {{ range seq $star_half }}
+                        <i class="fa fa-star-half-o"></i>
+                        {{ end }}
+                        {{ range seq $empty_stars }}
+                        <i class="fa fa-star-o"></i>
+                        {{ end }}
+                    </span></li>
+				{{ end }}
+                </ul>
+            </div><!--//language-->
+
